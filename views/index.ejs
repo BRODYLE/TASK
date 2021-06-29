@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app.fortune">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ng-controller="fortuneCtrl">Học Lý Luận Chính Trị</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/all.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.10.2/css/xeditable.min.css" />
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.10.2/js/xeditable.min.js"></script>
+
+
+    <!--toaster-->
+    <script src="http://code.angularjs.org/1.3.3/angular-animate.min.js"></script>
+    <script src="js/toaster.min.js"></script>
+    <link rel="stylesheet" href="css/toaster.min.css">
+
+    <!--tab-->
+        <link rel="stylesheet" href="css/animate.min.css" />
+        <link rel="stylesheet" href="css/angular.css" />
+        <script src="js/tabs.js"></script>
+
+    <!--phan trang-->
+    <script src="https://rawgit.com/michaelbromley/angularUtils-pagination/master/dirPagination.js"></script>
+
+    <link rel="stylesheet" href="css/pagination.css">
+
+    <script type="text/javascript">document.write('\u003c\u0073\u0063\u0072\u0069\u0070\u0074\u0020\u0073\u0072\u0063\u003d\u0022\u006a\u0073\u002f\u0061\u0070\u0070\u002e\u006a\u0073\u0022\u003e\u003c\u002f\u0073\u0063\u0072\u0069\u0070\u0074\u003e')</script>
+    <script src="js/services/svapp.js"></script>
+
+
+     <!--load app style-->
+<script src="js/webfontloader.js"></script>
+<script>WebFont.load({ google: { "families": ["Montserrat:300,400,500,600,700", "Roboto:300,400,500,600,700"] }, active: function () { sessionStorage.fonts = true; } });</script>
+<link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+<link href="css/vendors.bundle.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/custome.css" />
+
+
+</head>
+
+<body class="m-page--boxed m-body--fixed m-header--static m-aside--offcanvas-default">
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+      <header class="m-grid__item	m-grid m-grid--desktop m-grid--hor-desktop m-header ">
+        <div
+          class="m-grid__item m-grid__item--fluid m-grid m-grid--desktop m-grid--hor-desktop m-container m-container--responsive m-container--xxl">
+          <div class="m-grid__item m-grid__item--fluid m-grid m-grid--desktop m-grid--ver-desktop m-header__wrapper">
+            <div class="m-grid__item m-brand">
+              <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+                <div class="m-stack__item m-stack__item--middle m-brand__logo"> <a href="/#/" class="m-brand__logo-wrapper">
+                    <img alt="" src="images/logo.png" width="63px"> </a></div>
+                <div class="m-stack__item m-stack__item--middle m-brand__tools">
+                 
+                    <div
+                      class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push ng-scope"
+                      data-dropdown-toggle="click" aria-expanded="true"> <a href="javascript:void(0)"
+                        class="dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn m-btn--icon m-btn--pill">
+                        <B>HỌC LÝ LUẬN CHÍNH TRỊ</B> 
+                      
+                      </a>
+                      <div class="m-dropdown__wrapper"> <span
+                          class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"></span>
+                        <div class="m-dropdown__inner">
+                          <div class="m-dropdown__body">
+                            <div class="m-dropdown__content">
+                              <ul class="m-nav">
+                                <li class="m-nav__section m-nav__section--first m--hide"> <span
+                                    class="m-nav__section-text"> Quick Menu </span></li>
+                                <li class="m-nav__item"> <a href="/#/" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-share"></i> <span class="m-nav__link-text"> 
+                                      Trang chủ </span> </a></li>
+                                      <li class="m-nav__item"> <a href="/#/gioithieu" class="m-nav__link"> <i
+                                        class="m-nav__link-icon flaticon-chat-1"></i> <span class="m-nav__link-text"> Giới thiệu </span> </a></li>
+                                <li class="m-nav__item"> <a href="/#/tintuc" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-chat-1"></i> <span class="m-nav__link-text"> Tin tức </span> </a></li>
+                                <li class="m-nav__item"> <a href="/#/tailieu" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-info"></i> <span class="m-nav__link-text"> Tài liệu
+                                    </span> </a></li>
+                                <li class="m-nav__item"> <a href="/#/hoctap" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-lifebuoy"></i> <span class="m-nav__link-text"> Học tập </span> </a></li>
+                                                        <li class="m-nav__item"> <a href="/#/luyenthi" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-chat-1"></i> <span class="m-nav__link-text"> Luyện thi </span> </a></li>
+                                <li class="m-nav__item"> <a href="/#/chiase" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-info"></i> <span class="m-nav__link-text"> Chia sẻ
+                                    </span> </a></li>
+                                    <li class="m-nav__item"> <a href="/#/lienhe" class="m-nav__link"> <i
+                                      class="m-nav__link-icon flaticon-info"></i> <span class="m-nav__link-text"> Liên hệ
+                                    </span> </a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="m-grid__item m-grid__item--fluid m-header-head" id="m_header_nav">
+              <div id="m_header_topbar" class="m-topbar m-stack m-stack--ver m-stack--general">
+                <div class="m-stack__item m-topbar__nav-wrapper">
+                    
+                  <ul class="m-topbar__nav m-nav m-nav--inline">
+                   
+                    <li
+                      class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light"
+                      > 
+                      <a ng-show="userName" href="/#/dashboard"
+                        class="m-nav__link m-dropdown__toggle"><span
+                          class="m-topbar__username m--hidden-tablet m--hidden-mobile m--padding-right-15"> <span
+                            class="m-link" style="text-transform: uppercase;">Xin chào, <b>{{userName}} </b> </span> </span></a>
+                      <a ng-hide="userName" href="/#/login"
+                        class="m-nav__link m-dropdown__toggle"><span
+                          class="m-topbar__username m--hidden-tablet m--hidden-mobile m--padding-right-15"> <span
+                            class="m-link"> <b>Đăng nhập</b> </span> </span></a></li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div
+        class="m-grid__item m-grid__item--fluid m-grid m-grid m-grid--hor m-container m-container--responsive m-container--xxl">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor-desktop m-grid--desktop m-body">
+         
+            <div class="m-grid__item m-body__nav ng-scope">
+              <div class="m-stack m-stack--ver m-stack--desktop">
+                <div class="m-stack__item m-stack__item--middle m-stack__item--fluid"> <button
+                    class="m-aside-header-menu-mobile-close m-aside-header-menu-mobile-close--skin-light "
+                    id="m_aside_header_menu_mobile_close_btn"> <i class="la la-close"></i> </button>
+                  <div id="m_header_menu"
+                    class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
+                    <ul class="m-menu__nav m-menu__nav--submenu-arrow">
+                      <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/"
+                          class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Trang chủ </span></a></li>
+                          <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/gioithieu"
+                            class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Giới thiệu </span></a></li>
+                      <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/tintuc"
+                          class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Tin tức </span></a></li>
+                          <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/tailieu"
+                            class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Tài liệu </span></a></li>
+                            <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/hoctap"
+                              class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Học tập </span></a></li>
+                              <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/luyenthi"
+                                class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Luyện thi </span></a></li>
+                  
+                      <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/chiase"
+                          class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Chia sẻ </span></a></li>
+
+                          <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" aria-haspopup="true"> <a href="/#/lienhe"
+                            class="m-menu__link m-menu__toggle"><span class="m-menu__link-text"> Liên hệ </span></a></li>
+                     
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable m-header-search--skin-"
+                  id="m_quicksearch" data-search-type="default">
+               
+                  <div class="m-dropdown__wrapper">
+                    <div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
+                    <div class="m-dropdown__inner">
+                      <div class="m-dropdown__body">
+                        <div
+                          class="m-dropdown__scrollable m-scrollable mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar"
+                          data-scrollable="true" data-max-height="300" data-mobile-max-height="200"
+                          style="max-height: 300px; height: 300px; position: relative; overflow: visible;">
+                          <div id="mCSB_3" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
+                            tabindex="0" style="max-height: 300px;">
+                            <div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                              style="position:relative; top:0; left:0;" dir="ltr">
+                              <div class="m-dropdown__content m-list-search m-list-search--skin-light"
+                                style="color: #000"></div>
+                            </div>
+                          </div>
+                          <div id="mCSB_3_scrollbar_vertical"
+                            class="mCSB_scrollTools mCSB_3_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
+                            style="display: none;">
+                            <div class="mCSB_draggerContainer">
+                              <div id="mCSB_3_dragger_vertical" class="mCSB_dragger"
+                                style="position: absolute; min-height: 50px; top: 0px;">
+                                <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                              </div>
+                              <div class="mCSB_draggerRail"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          <div class="m-grid__item m-grid__item--fluid m-grid m-grid--desktop m-grid--ver-desktop m-body__content">
+            <div class="m-grid__item m-grid__item--fluid m-wrapper">
+    
+    <div class="m-portlet m-portlet--full-height">
+        <div ng-view></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <footer class="m-grid__item m-footer">
+        <div class="m-container m-container--responsive m-container--xxl">
+          <div class="m-footer__wrapper">
+            <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop" style="height: 20px">
+              <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last"> <span
+                  class="m-footer__copyright"> 2020 © Malplus</span></div>
+              <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+                <ul class="m-footer__nav m-nav m-nav--skin-dark m-nav--inline m--pull-right">
+                  <li class="m-nav__item"> <a href="/#/" class="m-nav__link"> <span class="m-nav__link-text"> Trang chủ
+                      </span> </a></li>
+                  <li class="m-nav__item"> <a href="/#/gioithieu" class="m-nav__link"> <span class="m-nav__link-text"> Giới thiệu
+                      </span> </a></li>
+                      <li class="m-nav__item"> <a href="/#/tintuc" class="m-nav__link"> <span class="m-nav__link-text"> Tin tức
+                      </span> </a></li>
+                      <li class="m-nav__item"> <a href="/#/tailieu" class="m-nav__link"> <span class="m-nav__link-text"> Tài liệu
+                      </span> </a></li>
+                      <li class="m-nav__item"> <a href="/#/hoctap" class="m-nav__link"> <span class="m-nav__link-text"> Học tập
+                      </span> </a></li>
+                      <li class="m-nav__item"> <a href="/#/luyenthi" class="m-nav__link"> <span class="m-nav__link-text"> Luyện thi
+                      </span> </a></li>
+                      <li class="m-nav__item"> <a href="/#/luyenthi" class="m-nav__link"> <span class="m-nav__link-text"> Chia sẻ
+                      </span> </a></li>
+                  <li class="m-nav__item"> <a href="/#/lienhe" class="m-nav__link"> <span class="m-nav__link-text"> Liên hệ
+                      </span> </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+    <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500"
+      data-scroll-speed="300"> <i class="la la-arrow-up"></i></div>
+    <script src="js/vendors.bundle.js" type="text/javascript"></script>
+    <script src="js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="js/dashboard.js" type="text/javascript"></script>
+      
+
+  
+
+<!--qui-->
+
+    
+
+    
+
+    <toaster-container
+        toaster-options="{'time-out': 5000,'preventDuplicates': 'true','position-class': 'toast-top-right','close-button': true,}">
+    </toaster-container>
+
+</body>
+
+</html>
